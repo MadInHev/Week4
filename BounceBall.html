@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Bouncing Ball</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #111;
+            flex-direction: column;
+        }
+ 
+        .cool-ball {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FF5C00;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+            background-image: conic-gradient(from 45deg, #FF5C00, #FF9000, #FF5C00);
+            transition: transform 0.2s;
+            animation: pulse 2s infinite alternate;
+        }
+ 
+        .pattern {
+            width: 70%;
+            height: 70%;
+            background: repeating-linear-gradient(45deg, #FF9000 0px, #FF9000 10px, #FF5C00 10px, #FF5C00 20px);
+            border-radius: 50%;
+        }
+ 
+        .shadow {
+            position: absolute;
+            bottom: -10px;
+            width: 80px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+        }
+ 
+        .cool-ball:active {
+            animation: bounce 0.7s ease-in-out forwards;
+        }
+ 
+        .cool-ball:active ~ .shadow {
+            animation: shadow 0.8s ease forwards;
+        }
+ 
+        @keyframes bounce {
+            0% { transform: translateY(0) rotate(0deg); }
+            30% { transform: translateY(-120px) rotate(45deg); }
+            50% { transform: translateY(0) rotate(90deg); }
+            70% { transform: translateY(-60px) rotate(135deg); }
+            100% { transform: translateY(0) rotate(180deg); }
+        }
+ 
+        @keyframes shadow {
+            0%, 50%, 100% { width: 80px; height: 20px; opacity: 0.3; }
+            30% { width: 50px; height: 10px; opacity: 0.2; }
+            70% { width: 60px; height: 15px; opacity: 0.25; }
+        }
+ 
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 92, 0, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(255, 92, 0, 1.2);
+            }
+        }
+ 
+        .instruction {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF9000;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            margin-top: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="cool-ball">
+        <div class="pattern"></div>
+    </div>
+    <div class="shadow"></div>
+    <div class="instruction">Hold to make the ball bounce</div>
+</body>
+</html>
+ 

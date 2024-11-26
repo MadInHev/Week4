@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .box{
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            
+            transition: all .25s ease-in 0s;
+            transition-property: width;
+            transition-duration: .25s;
+            transition-timing-function: ease-in;
+            transition-delay: 0s;
+        }
+
+        .box:hover{
+            background-color: rebeccapurple;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

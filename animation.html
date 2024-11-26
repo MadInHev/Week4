@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+
+        .box{
+            background-color: white;
+            width: 100px;
+            height: 100px;
+
+            animation-name: anim1;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
+            animation-direction: alternate;
+        }
+
+        @keyframes anim1 {
+            from{
+                width: 100px;
+                transform: translate(0px,0px);
+            }
+            to{
+                width: 400px;
+                background-color: rgb(115, 29, 115);
+                transform: translate(0px,500px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
